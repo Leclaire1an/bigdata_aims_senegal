@@ -4,6 +4,7 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 #import argparse
 import sys
+import os
 
 print 'code name is: ',sys.argv[0]
 
@@ -37,7 +38,7 @@ access_token_secret = os.environ.get('TWITTER_ACESS_TOKEN_SECRET')
 class StdOutListener(StreamListener):
 
     def on_data(self, data):
-        #print data
+        print 'New tweet Added!'
         fhandle.write(data)
         return True
 
